@@ -1,6 +1,7 @@
 import {useContext, useState} from "react";
 import { toast } from "react-toastify";
 import AuthContext from "@/context/AuthContext";
+import axios from "axios";
 
 
 const LoginPage = () => {
@@ -10,8 +11,10 @@ const LoginPage = () => {
     const handleLogin = async () => {
         if (email === '' || password === '') {
             toast.error("تمامی فیلد ها الزامی هستند")
+            return;
         }
-        await login({email, password})
+
+        await login({ email, password })
     }
 
 
