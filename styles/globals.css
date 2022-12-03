@@ -134,3 +134,8 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.Toastify__toast-body {
+  font-family: "Vazir" !important;
+  direction: rtl;
+}
