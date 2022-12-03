@@ -7,7 +7,7 @@ import axios from "axios";
 const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const {login} = useContext(AuthContext);
+    const {login, loading} = useContext(AuthContext);
     const handleLogin = async () => {
         if (email === '' || password === '') {
             toast.error("تمامی فیلد ها الزامی هستند")
@@ -35,7 +35,7 @@ const LoginPage = () => {
                             </div>
                             <button onClick={handleLogin} type="submit" className="btn btn-dark">
                                 ورود
-                                {/* {loading && <div className="spinner-border spinner-border-sm ms-2"></div>} */}
+                                 {loading && <div className="spinner-border spinner-border-sm ms-2"></div>}
                             </button>
                         </div>
                     </div>
