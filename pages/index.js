@@ -1,4 +1,14 @@
+import useSWR from 'swr'
+import {handleError} from "@/lib/helper";
+import {toast} from "react-toastify";
+import Loading from "@/components/Loading";
+
 const Home = () => {
+
+    const { data, error } = useSWR('/global?url=/transactions/chart')
+    if (error) toast.error(handleError(error))
+    if (!data) return <Loading />
+
     return (
         <>
             <div
@@ -6,7 +16,7 @@ const Home = () => {
                 <h4 className="fw-bold">داشبورد</h4>
             </div>
 
-            <div id="chartdiv"></div>
+            {/*<div id="chartdiv"></div>*/}
         </>
     )
 }

@@ -1,8 +1,8 @@
 import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
-import {ToastContainer} from "react-toastify";
 import {useRouter} from "next/router";
-
+import axios from "axios";
+import { SWRConfig } from 'swr'
 
 const Layout = ({children}) => {
 
@@ -15,7 +15,11 @@ const Layout = ({children}) => {
     }
 
     return (
-        <>
+        <SWRConfig
+            value = {{
+                fetcher: (url) => axios.get(url).then(res => res.data)
+            }}
+        >
             <Header/>
             <div className="container-fluid">
                 <div className="row">
@@ -25,7 +29,7 @@ const Layout = ({children}) => {
                     </main>
                 </div>
             </div>
-        </>
+        </SWRConfig>
     )
 }
 

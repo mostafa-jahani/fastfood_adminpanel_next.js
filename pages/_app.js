@@ -6,6 +6,10 @@ import {useEffect} from "react";
 import Layout from "@/components/layout/Layout";
 import {ToastContainer} from "react-toastify";
 import {AuthProvider} from "@/context/AuthContext";
+import axios from "axios";
+
+
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_APP_API_URL;
 
 function MyApp({Component, pageProps}) {
     useEffect(() => {
