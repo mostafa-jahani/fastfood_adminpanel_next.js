@@ -6,8 +6,9 @@ export default async function handler(req, res) {
         res.status(403).json({ message: 'ورود نا موفق یکبار دیگر تلاش کنید' })
     } else if (req.method === 'GET') {
 
+        let page = req.query.hasOwnProperty('page') ? `?page=${req.query.page}` : '';
         try {
-            const resApi = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}${req.query.url}`, {
+            const resApi = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}${req.query.url}${page}`, {
                 headers: {
                     'Authorization': `Bearer ${req.cookies.token}`
                 }

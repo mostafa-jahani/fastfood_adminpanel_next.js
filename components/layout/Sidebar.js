@@ -1,25 +1,31 @@
+import Link from "next/link";
+import {useRouter} from "next/router";
+
 const Sidebar = () => {
+
+    const router = useRouter()
+
     return (
         <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
             <div className="position-sticky pt-3">
                 <ul className="nav flex-column">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="index.html">
+                        <Link className={router.pathname === '/' ? "nav-link active" : "nav-link"} aria-current="page" href="/">
                             <i className="bi bi-grid me-2"></i>
                             داشبورد
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">
+                        <Link className={router.pathname === '/users' ? "nav-link active" : "nav-link"} href="/users">
                             <i className="bi bi-people me-2"></i>
                             کاربران
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="./products.html">
+                        <Link className={router.pathname === '/products' ? "nav-link active" : "nav-link"} href="/products">
                             <i className="bi bi-box-seam me-2"></i>
                             محصولات
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">

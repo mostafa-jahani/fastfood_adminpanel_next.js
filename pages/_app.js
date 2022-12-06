@@ -7,7 +7,12 @@ import Layout from "@/components/layout/Layout";
 import {ToastContainer} from "react-toastify";
 import {AuthProvider} from "@/context/AuthContext";
 import axios from "axios";
+import NProgress from 'nprogress'
+import Router from "next/router";
 
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_APP_API_URL;
 
