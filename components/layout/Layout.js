@@ -4,8 +4,8 @@ import {useRouter} from "next/router";
 import axios from "axios";
 import { SWRConfig } from 'swr'
 
-const Layout = ({children}) => {
 
+const Layout = ({children}) => {
     const router = useRouter()
 
     if (router.pathname === "/auth/login") {

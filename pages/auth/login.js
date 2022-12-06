@@ -13,7 +13,6 @@ const LoginPage = () => {
             toast.error("تمامی فیلد ها الزامی هستند")
             return;
         }
-
         await login({ email, password })
     }
 
