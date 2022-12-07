@@ -3,6 +3,7 @@ import { handleError } from "@/lib/helper";
 import { useRouter } from "next/router"
 import { toast } from "react-toastify";
 import useSWR from "swr";
+import DeleteUser from "@/components/users/Delete";
 
 const ShowUser = () => {
     const router = useRouter();
@@ -33,6 +34,8 @@ const ShowUser = () => {
                     </div>
                 </div>
             </div>
+
+            <DeleteUser id={data.id} />
         </>
     )
 }
