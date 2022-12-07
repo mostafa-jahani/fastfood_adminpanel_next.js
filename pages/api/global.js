@@ -19,6 +19,22 @@ export default async function handler(req, res) {
         } catch (err) {
             res.status(422).json({ message: { 'err': [handleError(err)] } })
         }
+    } else if (req.method === 'POST') {
+
+        try {
+            const resApi = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}${req.query.url}`, {
+                ...req.body
+            }, {
+                headers: {
+                    'Authorization': `Bearer ${req.cookies.token}`
+                }
+            });
+
+            res.status(200).json(resApi.data.data)
+
+        } catch (err) {
+            res.status(422).json({ message: { 'err': [handleError(err)] } })
+        }
 
     }
 }

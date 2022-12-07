@@ -16,7 +16,7 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={router.pathname === '/users' ? "nav-link active" : "nav-link"} href="/users">
+                        <Link className={router.pathname.includes('/users') ? "nav-link active" : "nav-link"} href="/users">
                             <i className="bi bi-people me-2"></i>
                             کاربران
                         </Link>
