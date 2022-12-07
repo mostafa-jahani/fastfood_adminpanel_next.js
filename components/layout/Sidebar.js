@@ -22,7 +22,7 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={router.pathname === '/products' ? "nav-link active" : "nav-link"} href="/products">
+                        <Link className={router.pathname.includes('/products') ? "nav-link active" : "nav-link"} href="/products">
                             <i className="bi bi-box-seam me-2"></i>
                             محصولات
                         </Link>
