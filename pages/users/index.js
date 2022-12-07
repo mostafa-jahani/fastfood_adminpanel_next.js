@@ -6,7 +6,7 @@ import Link from "next/link";
 import UserList from "@/components/users/List";
 import {useState} from "react";
 
-const Home = () => {
+const UsersPage = () => {
     const [pageIndex, setPageIndex] = useState(0);
     const {data, error} = useSWR(`/global?url=/users&page=${pageIndex}`)
     if (error) toast.error(handleError(error))
@@ -39,4 +39,4 @@ const Home = () => {
 }
 
 
-export default Home;
+export default UsersPage;
