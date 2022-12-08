@@ -9,7 +9,6 @@ import useSWR from 'swr';
 const ProductsPage = () => {
     const [pageIndex, setPageIndex] = useState(0);
     const {data, error} = useSWR(`/global?url=/products&page=${pageIndex}`)
-
     if (error) return toast.error(handleError(error))
     if (!data) return <Loading/>
 
@@ -28,8 +27,7 @@ const ProductsPage = () => {
                     <ul className="pagination">
                         {data.meta.links.slice(1, -1).map((link, index) => (
                             <li key={index} className={link.active ? "page-item active" : "page-item"}>
-                                <button onClick={() => setPageIndex(link.label)} className="page-link"
-                                        disabled={link.active ? true : false}>
+                                <button onClick={() => setPageIndex(link.label)} className="page-link" disabled={link.active ? true : false}>
                                     <span>{link.label}</span>
                                 </button>
                             </li>

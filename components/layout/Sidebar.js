@@ -34,10 +34,10 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">
+                        <Link className={router.pathname.includes('/orders') ? "nav-link active" : "nav-link"} href="/orders">
                             <i className="bi bi-basket me-2"></i>
                             سفارشات
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">
