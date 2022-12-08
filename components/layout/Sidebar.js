@@ -40,10 +40,10 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">
+                        <Link className={router.pathname.includes('/transactions') ? "nav-link active" : "nav-link"} href="/transactions">
                             <i className="bi bi-currency-dollar me-2"></i>
                             تراکنش ها
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">

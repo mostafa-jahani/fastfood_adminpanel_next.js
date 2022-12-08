@@ -53,7 +53,7 @@ const OrderList = ({ orders }) => {
                                                         {order.order_items.map((item) => (
                                                             <tr key={item.id}>
                                                                 <th>
-                                                                    <Image src={item.product_primary_image} layout="responsive" width={80} height={53} alt="" />
+                                                                    <Image src={item.product_primary_image} width={80} height={53} alt="" />
                                                                 </th>
                                                                 <td className="fw-bold">{item.product_name}</td>
                                                                 <td>{numberFormat(item.price)} تومان</td>
