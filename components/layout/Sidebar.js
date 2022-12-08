@@ -28,10 +28,10 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">
+                        <Link className={router.pathname.includes('/categories') ? "nav-link active" : "nav-link"} href="/categories">
                             <i className="bi bi-grid-3x3-gap me-2"></i>
                             دسته بندی
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">
